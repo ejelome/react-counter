@@ -10,7 +10,8 @@ Learn [React](https://reactjs.org) with a counter.
 
 - [react-counter](#react-counter)
   - [Lessons](#lessons)
-    - [Lesson 0. Setup](#lesson-0-setup)
+    - [0. Setup](#0-setup)
+    - [1. Component example](#1-component-example)
 
 <!-- markdown-toc end -->
 
@@ -18,7 +19,7 @@ Learn [React](https://reactjs.org) with a counter.
 
 ## Lessons
 
-### Lesson 0. Setup
+### 0. Setup
 
 1. Install [npm](https://npmjs.com) [CLI](https://github.com/npm/cli)
 
@@ -28,15 +29,7 @@ Learn [React](https://reactjs.org) with a counter.
 2. Create boilerplate with [create-react-app](https://github.com/facebook/create-react-app)
 
    > **Note:** <br />
-   > It is recommended to run `create-react-app` with `npx`.
-
-   **Example:**
-
-   ```shell
-   $ npx create-react-app <project-directory>
-   ```
-
-3) `create-react-app` includes [npm-run-script](https://docs.npmjs.com/cli/run-script)s:
+   > The `create-react-app` command includes [npm-run-script](https://docs.npmjs.com/cli/run-script)s:
 
    ```shell
    $ npm start        # starts the development server
@@ -46,3 +39,17 @@ Learn [React](https://reactjs.org) with a counter.
 
    > **Warning:** <br />
    > The `npm eject` command will destroy the setup, there's no undo!
+
+### 1. Component example
+
+```javascript
+// file: src/App.js
+import React from "react";
+
+const App = () => <h1>Counter</h1>;
+
+export default App;
+```
+
+> **Notes:** <br />
+> The `src/App.js` file is `import`ed then `render`ed to `src/index.js`
