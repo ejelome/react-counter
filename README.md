@@ -9,12 +9,24 @@ Learn [React](https://reactjs.org) with a counter.
 **Table of Contents**
 
 - [react-counter](#react-counter)
+  - [ES2015+](#es2015)
   - [Lessons](#lessons)
     - [0. Setup](#0-setup)
     - [1. Component example](#1-component-example)
   - [License](#license)
 
 <!-- markdown-toc end -->
+
+---
+
+## ES2015+
+
+To not confuse [React API](https://reactjs.org/docs/react-api.html) with the new [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules) syntax, the following are from [ECMAScript 2015](http://ecma-international.org/ecma-262/6.0) and beyond:
+
+- [`import`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import) to import the new built-in [modules](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules) feature
+- [`const`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const) as the read-only alternative of [`var` statement](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/var)
+- `() =>` or [arrow function expression](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions) as the new alternative for [`function` declaration](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function)
+- [`export`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/export) to bind [functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function), [objects](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects), or [primitive values](https://developer.mozilla.org/en-US/docs/Glossary/Primitive) from a module
 
 ---
 
