@@ -9,6 +9,9 @@ Learn [React](https://reactjs.org) with a counter.
 **Table of Contents**
 
 - [react-counter](#react-counter)
+  - [Usage](#usage)
+    - [Install](#install)
+    - [Serve](#serve)
   - [ES2015+](#es2015)
   - [Lessons](#lessons)
     - [0. Setup](#0-setup)
@@ -16,6 +19,22 @@ Learn [React](https://reactjs.org) with a counter.
   - [License](#license)
 
 <!-- markdown-toc end -->
+
+---
+
+## Usage
+
+### Install
+
+```shell
+$ npm [install|isntall|add|i]
+```
+
+### Serve
+
+```shell
+$ npm start
+```
 
 ---
 
