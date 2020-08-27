@@ -34,7 +34,7 @@ To not confuse [React API](https://reactjs.org/docs/react-api.html) with the new
 
 ### 0. Setup
 
-1. Install [npm](https://npmjs.com) [CLI](https://github.com/npm/cli)
+1. Install [npm](https://github.com/npm/cli) CLI
 
    > **Note:** <br />
    > It is recommended installing `npm` CLI with [nvm](https://github.com/nvm-sh/nvm).
@@ -42,7 +42,15 @@ To not confuse [React API](https://reactjs.org/docs/react-api.html) with the new
 2. Create boilerplate with [create-react-app](https://github.com/facebook/create-react-app)
 
    > **Note:** <br />
-   > The `create-react-app` command includes [npm-run-script](https://docs.npmjs.com/cli/run-script)s:
+   > It is recommended to run `create-react-app` with [npx](https://github.com/npm/npx).
+
+   **Example:**
+
+   ```shell
+   $ npx create-react-app <project-directory>
+   ```
+
+3. `create-react-app` includes [npm-run-script](https://docs.npmjs.com/cli/run-script)s:
 
    ```shell
    $ npm start        # starts the development server
