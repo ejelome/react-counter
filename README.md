@@ -12,6 +12,7 @@ Learn [React](https://reactjs.org) with a counter.
   - [Lessons](#lessons)
     - [0. Setup](#0-setup)
     - [1. Component example](#1-component-example)
+  - [License](#license)
 
 <!-- markdown-toc end -->
 
@@ -53,3 +54,9 @@ export default App;
 
 > **Notes:** <br />
 > The `src/App.js` file is `import`ed then `render`ed to `src/index.js`
+
+---
+
+## License
+
+`react-counter` is licensed under [MIT](./LICENSE).
