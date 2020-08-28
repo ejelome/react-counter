@@ -48,7 +48,7 @@ To not confuse [React API](https://reactjs.org/docs/react-api.html) with the new
 - [`const`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const) is the read-only alternative of [`var` statement](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/var)
 - `() =>` or [arrow function expression](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions) is the new alternative of [`function` declaration](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function)
 - [`export`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/export) will bind [functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function), [objects](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects), or [primitive values](https://developer.mozilla.org/en-US/docs/Glossary/Primitive) from a module
-- `` `${}` `` or [template literals](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals) can embed expressions in a [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)
+- `` `${}` `` or [template literals](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals) can embed expressions in a [`String`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)
 
 ---
 
@@ -72,7 +72,7 @@ To not confuse [React API](https://reactjs.org/docs/react-api.html) with the new
    > $ npx create-react-app <project-directory>
    > ```
 
-3. `create-react-app` includes a couple of [`npm run-script`](https://docs.npmjs.com/cli/run-script)s:
+3. `create-react-app` includes a couple of [`npm-run-script`](https://docs.npmjs.com/cli/run-script)s:
 
    ```shell
    $ npm start        # starts the development server
@@ -105,7 +105,7 @@ export default App;
 
 ```javascript
 // file: src/App.js
-// ...
+// …
 const capitalize = (string) => {
   const first = string.charAt(0).toUpperCase();
   const rest = string.slice(1);
@@ -116,15 +116,15 @@ const App = () => {
   const title = "counter";
   return <h1>{capitalize(title)}</h1>;
 };
-// ...
+// …
 ```
 
 > **Notes:** <br />
-> `JSX` expression &hellip;
+> JSX expression &hellip;
 >
-> - are code wrapped in pairs of curly braces `{}`
-> - becomes regular `function` calls evaluated as `object`s
-> - accepts any valid JavaScript expressions
+> - are pairs of curly braces (`{}`) that wraps code
+> - become regular `function` calls evaluated to objects
+> - accept any valid JavaScript expressions
 
 ---
 
