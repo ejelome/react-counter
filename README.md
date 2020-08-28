@@ -16,6 +16,8 @@ Learn [React](https://reactjs.org) with a counter.
   - [Lessons](#lessons)
     - [0. Setup](#0-setup)
     - [1. Component example](#1-component-example)
+    - [2. JSX](#2-jsx)
+      - [2.1. Expression](#21-expression)
   - [License](#license)
 
 <!-- markdown-toc end -->
@@ -96,6 +98,33 @@ export default App;
 >
 > - `src/App.js` file is `import`ed then `render`ed to `src/index.js`
 > - `<h1>Counter</h1>` is not [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML) but [JSX](https://reactjs.org/docs/introducing-jsx.html) (or **J**ava**S**cript [**X**ML](https://developer.mozilla.org/en-US/docs/Web/XML))
+
+### 2. JSX
+
+#### 2.1. Expression
+
+```javascript
+// file: src/App.js
+// ...
+const capitalize = (string) => {
+  const first = string.charAt(0).toUpperCase();
+  const rest = string.slice(1);
+  return `${first}${rest}`;
+};
+
+const App = () => {
+  const title = "counter";
+  return <h1>{capitalize(title)}</h1>;
+};
+// ...
+```
+
+> **Notes:** <br />
+> `JSX` expression &hellip;
+>
+> - are code wrapped in pairs of curly braces `{}`
+> - becomes regular `function` calls evaluated as `object`s
+> - accepts any valid JavaScript expressions
 
 ---
 
