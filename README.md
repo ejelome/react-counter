@@ -18,6 +18,7 @@ Learn [React](https://reactjs.org) with a counter.
     - [1. Component example](#1-component-example)
     - [2. JSX](#2-jsx)
       - [2.1. Expression](#21-expression)
+      - [2.2. Conditional](#22-conditional)
   - [License](#license)
 
 <!-- markdown-toc end -->
@@ -49,6 +50,7 @@ To not confuse [React API](https://reactjs.org/docs/react-api.html) with the new
 - `() =>` or [arrow function expression](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions) is the new alternative of [`function` declaration](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function)
 - [`export`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/export) will bind [functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function), [objects](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects), or [primitive values](https://developer.mozilla.org/en-US/docs/Glossary/Primitive) from a module
 - `` `${}` `` or [template literals](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals) can embed expressions in a [`String`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)
+- `{:}` or [destructuring assignment](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment) will unpack values from an [`Array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array) or [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) into named variables
 
 ---
 
@@ -125,6 +127,26 @@ const App = () => {
 > - are pairs of curly braces (`{}`) that wraps code
 > - become regular `function` calls evaluated to objects
 > - accept any valid JavaScript expressions
+> - can include JSX expressions such as [logical](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators#Binary_logical_operators), [conditional](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators#Conditional_ternary_operator) or [equality](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators#Equality_operators) operators
+> - can't contain conditional statements such as [`if`…`else`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/if...else) or [`switch`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/switch) can't be used in JSX expression
+
+#### 2.2. Conditional
+
+```javascript
+// …
+const App = () => {
+  const title = "counter";
+  const homePath = "/";
+  const {
+    location: { pathname: currentPath },
+  } = window;
+  return <h1>{currentPath === homePath && capitalize(title)}</h1>;
+};
+// …
+```
+
+> **Note:** <br />
+> JSX conditional can be any JavaScript [conditionals](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/conditionals).
 
 ---
 
