@@ -20,6 +20,7 @@ Learn [React](https://reactjs.org) with a counter.
       - [2.1. Expression](#21-expression)
       - [2.2. Conditional](#22-conditional)
       - [2.3. Attribute](#23-attribute)
+      - [2.4. Children](#24-children)
   - [License](#license)
 
 <!-- markdown-toc end -->
@@ -101,6 +102,7 @@ export default App;
 >
 > - `src/App.js` file is `import`ed then `render`ed to `src/index.js`
 > - `<h1>Counter</h1>` is not [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML) but [JSX](https://reactjs.org/docs/introducing-jsx.html) (or **J**ava**S**cript [**X**ML](https://developer.mozilla.org/en-US/docs/Web/XML))
+> - JSX supports the [self-closing tag](https://dev.w3.org/html5/html-author/#self-closing-tag) (`<…/>`) special form
 
 ### 2. JSX
 
@@ -168,7 +170,23 @@ const App = () => {
 >
 > - can either be the element's built-in HTML [attributes](https://developer.mozilla.org/en-US/docs/Glossary/Attribute) or the component's [props](https://reactjs.org/docs/components-and-props.html)
 > - name uses [camelCase](https://en.wikipedia.org/wiki/Camel_case) as naming convention similar to JavaScript [properties](https://developer.mozilla.org/en-US/docs/Glossary/property/JavaScript)
-> - value can either be a JSX expression (`{}`) or a literal `String` (`""` or `''`) *but not both*
+> - value can either be a JSX expression (`{}`) or a literal `String` (`""` or `''`) _but not both_
+
+#### 2.4. Children
+
+```javascript
+// file: src/App.js
+// …
+const App = () => {
+  // …
+    <div className="App">
+      <h1 …
+    </div>
+// …
+```
+
+> **Note:** <br />
+> JSX children can be passed as a nested element or to the `props` attribute, `children`.
 
 ---
 
