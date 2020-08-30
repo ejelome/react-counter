@@ -21,6 +21,7 @@ Learn [React](https://reactjs.org) with a counter.
       - [2.2. Conditional](#22-conditional)
       - [2.3. Attribute](#23-attribute)
       - [2.4. Children](#24-children)
+      - [2.5. Object representation](#25-object-representation)
   - [License](#license)
 
 <!-- markdown-toc end -->
@@ -103,7 +104,9 @@ export default App;
 >
 > - `src/App.js` file is `import`ed and `render`ed at `src/index.js`
 > - `<h1>Counter</h1>` is not [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML) but [JSX](https://reactjs.org/docs/introducing-jsx.html) (or **J**ava**S**cript [**X**ML](https://developer.mozilla.org/en-US/docs/Web/XML))
-> - JSX supports [self-closing tag](https://dev.w3.org/html5/html-author/#self-closing-tag) (`<…/>`) special form
+> - JSX support [self-closing tag](https://dev.w3.org/html5/html-author/#self-closing-tag) (`<…/>`) special form
+> - [`ReactDOM`](https://reactjs.org/docs/react-dom.html) escape values embedded in JSX before being rendered
+> - These values are converted to `String`s before being rendered to prevent [XSS](https://en.wikipedia.org/wiki/Cross-site_scripting)
 
 ### 2. JSX
 
@@ -166,7 +169,7 @@ const App = () => {
 // …
 ```
 
-> **Note:** <br />
+> **Notes:** <br />
 > JSX attribute &hellip;
 >
 > - can either be the element's built-in HTML [attributes](https://developer.mozilla.org/en-US/docs/Glossary/Attribute) or component's [props](https://reactjs.org/docs/components-and-props.html)
@@ -191,6 +194,61 @@ const App = () => {
 
 > **Note:** <br />
 > JSX children can be passed as a nested element or to `props`' attribute, `children`.
+
+#### 2.5. Object representation
+
+_This component &hellip;_
+
+```javascript
+import React from "react";
+// …
+return (
+  <div className="App">
+    <h1 className={klass}>{currentPath === homePath && capitalize(title)}</h1>
+  </div>
+);
+// …
+```
+
+_&hellip; is equivalent to &hellip;_
+
+```javascript
+import { createElement } from "react";
+// …
+return createElement(
+  "div",
+  { className: "App" },
+  createElement(
+    "h1",
+    { className: klass },
+    currentPath === homePath && capitalize(title)
+  )
+);
+// …
+```
+
+_&hellip; at the end becomes &hellip;_
+
+```javascript
+{
+  type: "div",
+  props: {
+    className: "App",
+    children: {
+      type: "h1",
+      props: {
+        className: klass,
+        children: currentPath === homePath && capitalize(title),
+      },
+    },
+  },
+};
+```
+
+> **Notes:** <br />
+>
+> - [Babel](https://babeljs.io) compiles JSX components into [`React.createElement`](https://reactjs.org/docs/react-api.html#createelement) calls
+> - `React.createElement` then creates JavaScript `Object`s called _React elements_
 
 ---
 
