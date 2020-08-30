@@ -8,11 +8,14 @@ const capitalize = (string) => {
 
 const App = () => {
   const title = "counter";
+  const klass = "title";
   const homePath = "/";
   const {
     location: { pathname: currentPath },
   } = window;
-  return <h1>{currentPath === homePath && capitalize(title)}</h1>;
+  return (
+    <h1 className={klass}>{currentPath === homePath && capitalize(title)}</h1>
+  );
 };
 
 export default App;

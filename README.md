@@ -19,6 +19,7 @@ Learn [React](https://reactjs.org) with a counter.
     - [2. JSX](#2-jsx)
       - [2.1. Expression](#21-expression)
       - [2.2. Conditional](#22-conditional)
+      - [2.3. Attribute](#23-attribute)
   - [License](#license)
 
 <!-- markdown-toc end -->
@@ -133,6 +134,7 @@ const App = () => {
 #### 2.2. Conditional
 
 ```javascript
+// file: src/App.js
 // …
 const App = () => {
   const title = "counter";
@@ -147,6 +149,26 @@ const App = () => {
 
 > **Note:** <br />
 > JSX conditional can be any JavaScript [conditionals](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/conditionals).
+
+#### 2.3. Attribute
+
+```javascript
+// file: src/App.js
+// …
+const App = () => {
+  // …
+  const klass = "title";
+  // …
+    <h1 className={klass}>…</h1>
+// …
+```
+
+> **Note:** <br />
+> JSX attribute &hellip;
+>
+> - can either be the element's built-in HTML [attributes](https://developer.mozilla.org/en-US/docs/Glossary/Attribute) or the component's [props](https://reactjs.org/docs/components-and-props.html)
+> - name uses [camelCase](https://en.wikipedia.org/wiki/Camel_case) as naming convention similar to JavaScript [properties](https://developer.mozilla.org/en-US/docs/Glossary/property/JavaScript)
+> - value can either be a JSX expression (`{}`) or a literal `String` (`""` or `''`) *but not both*
 
 ---
 
