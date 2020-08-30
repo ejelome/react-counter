@@ -14,7 +14,9 @@ const App = () => {
     location: { pathname: currentPath },
   } = window;
   return (
-    <h1 className={klass}>{currentPath === homePath && capitalize(title)}</h1>
+    <div className="App">
+      <h1 className={klass}>{currentPath === homePath && capitalize(title)}</h1>
+    </div>
   );
 };
 
