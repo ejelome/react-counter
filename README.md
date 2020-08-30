@@ -45,14 +45,14 @@ $ npm start
 
 ## ES2015+
 
-To not confuse [React API](https://reactjs.org/docs/react-api.html) with the new [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules) syntax, the following are from [ECMAScript 2015](http://ecma-international.org/ecma-262/6.0) and beyond:
+To not confuse [React API](https://reactjs.org/docs/react-api.html) with [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules)'s new syntax, the following are [ECMAScript 2015](http://ecma-international.org/ecma-262/6.0)+ new features:
 
 - [`import`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import) will import the new built-in [modules](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules) feature
-- [`const`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const) is the read-only alternative of [`var` statement](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/var)
-- `() =>` or [arrow function expression](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions) is the new alternative of [`function` declaration](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function)
-- [`export`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/export) will bind [functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function), [objects](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects), or [primitive values](https://developer.mozilla.org/en-US/docs/Glossary/Primitive) from a module
-- `` `${}` `` or [template literals](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals) can embed expressions in a [`String`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)
-- `{:}` or [destructuring assignment](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment) will unpack values from an [`Array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array) or [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) into named variables
+- [`const`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const) or [constant](<https://en.wikipedia.org/wiki/Constant_(computer_programming)>) is a read-only alternative of [`var` statement](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/var)
+- `() =>` or [arrow function expression](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions) is a new alternative of [`function` declaration](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function)
+- [`export`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/export) will bind [functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function), [objects](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects), or [primitive values](https://developer.mozilla.org/en-US/docs/Glossary/Primitive) from modules
+- `` `${}` `` or [template literals](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals) can embed expressions in [`String`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)s
+- `{:}` or [destructuring assignment](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment) will unpack values from [`Array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)s or [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)s into named variables
 
 ---
 
@@ -79,13 +79,14 @@ To not confuse [React API](https://reactjs.org/docs/react-api.html) with the new
 3. `create-react-app` includes a couple of [`npm-run-script`](https://docs.npmjs.com/cli/run-script)s:
 
    ```shell
-   $ npm start        # starts the development server
-   $ npm run build    # bundles the app into static files for production
-   $ npm [test|tst|t] # starts the test runner
+   $ npm start        # start development server
+   $ npm run build    # bundle app into static files for production
+   $ npm [test|tst|t] # start test runner
+   $ npm eject        # destroy setup
    ```
 
    > **Warning:** <br />
-   > `npm eject` will destroy the setup (there's no undo!).
+   > `npm eject`'s destructive operation cannot be undone.
 
 ### 1. Component example
 
@@ -100,9 +101,9 @@ export default App;
 
 > **Notes:** <br />
 >
-> - `src/App.js` file is `import`ed then `render`ed to `src/index.js`
+> - `src/App.js` file is `import`ed and `render`ed at `src/index.js`
 > - `<h1>Counter</h1>` is not [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML) but [JSX](https://reactjs.org/docs/introducing-jsx.html) (or **J**ava**S**cript [**X**ML](https://developer.mozilla.org/en-US/docs/Web/XML))
-> - JSX supports the [self-closing tag](https://dev.w3.org/html5/html-author/#self-closing-tag) (`<…/>`) special form
+> - JSX supports [self-closing tag](https://dev.w3.org/html5/html-author/#self-closing-tag) (`<…/>`) special form
 
 ### 2. JSX
 
@@ -130,8 +131,8 @@ const App = () => {
 > - are pairs of curly braces (`{}`) that wraps code
 > - become regular `function` calls evaluated to objects
 > - accept any valid JavaScript expressions
-> - can include JSX expressions such as [logical](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators#Binary_logical_operators), [conditional](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators#Conditional_ternary_operator) or [equality](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators#Equality_operators) operators
-> - can't contain conditional statements such as [`if`…`else`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/if...else) or [`switch`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/switch) can't be used in JSX expression
+> - can contain [logical](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators#Binary_logical_operators), [conditional](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators#Conditional_ternary_operator) or [equality](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators#Equality_operators) operators
+> - cannot contain [`if`…`else`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/if...else) or [`switch`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/switch) conditional statements
 
 #### 2.2. Conditional
 
@@ -168,9 +169,12 @@ const App = () => {
 > **Note:** <br />
 > JSX attribute &hellip;
 >
-> - can either be the element's built-in HTML [attributes](https://developer.mozilla.org/en-US/docs/Glossary/Attribute) or the component's [props](https://reactjs.org/docs/components-and-props.html)
-> - name uses [camelCase](https://en.wikipedia.org/wiki/Camel_case) as naming convention similar to JavaScript [properties](https://developer.mozilla.org/en-US/docs/Glossary/property/JavaScript)
-> - value can either be a JSX expression (`{}`) or a literal `String` (`""` or `''`) _but not both_
+> - can either be the element's built-in HTML [attributes](https://developer.mozilla.org/en-US/docs/Glossary/Attribute) or component's [props](https://reactjs.org/docs/components-and-props.html)
+> - name use [camelCase](https://en.wikipedia.org/wiki/Camel_case) as naming convention similar to JavaScript [properties](https://developer.mozilla.org/en-US/docs/Glossary/property/JavaScript)
+> - value can either be a JSX expression (`{}`) or a literal `String` _but not both_
+
+> **Warning:** <br />
+> JSX expression in quotes is evaluated as a literal `String` (e.g. `"{klass}"` becomes `{klass}` not `title`).
 
 #### 2.4. Children
 
@@ -186,7 +190,7 @@ const App = () => {
 ```
 
 > **Note:** <br />
-> JSX children can be passed as a nested element or to the `props` attribute, `children`.
+> JSX children can be passed as a nested element or to `props`' attribute, `children`.
 
 ---
 
