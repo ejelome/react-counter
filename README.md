@@ -87,7 +87,8 @@ To not confuse [React API](https://reactjs.org/docs/react-api.html) with [JavaSc
    $ npm eject        # destroy setup
    ```
 
-   > **Warning:** <br /> > `npm eject`'s destructive operation cannot be undone.
+   > **Warning:** <br />
+   > The `npm eject` is a destructive operation and cannot be undone.
 
 ### 1. Component example
 
