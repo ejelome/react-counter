@@ -100,7 +100,7 @@ const App = () => <h1>Counter</h1>;
 export default App;
 ```
 
-> **Notes:** <br />
+> **Notes:**
 >
 > - `src/App.js` file is `import`ed and `render`ed at `src/index.js`
 > - `<h1>Counter</h1>` is not [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML) but [JSX](https://reactjs.org/docs/introducing-jsx.html) (or **J**ava**S**cript [**X**ML](https://developer.mozilla.org/en-US/docs/Web/XML))
@@ -128,7 +128,7 @@ const App = () => {
 // …
 ```
 
-> **Notes:** <br />
+> **Notes:**
 > JSX expression &hellip;
 >
 > - are pairs of curly braces (`{}`) that wraps code
@@ -168,7 +168,7 @@ const App = () => {
 // …
 ```
 
-> **Notes:** <br />
+> **Notes:**
 > JSX attribute &hellip;
 >
 > - can either be the element's built-in HTML [attributes](https://developer.mozilla.org/en-US/docs/Glossary/Attribute) or component's [props](https://reactjs.org/docs/components-and-props.html)
@@ -250,7 +250,7 @@ _&hellip; at the end becomes &hellip;_
 };
 ```
 
-> **Notes:** <br />
+> **Notes:**
 >
 > - [Babel](https://babeljs.io) compiles JSX components into [`React.createElement`](https://reactjs.org/docs/react-api.html#createelement) calls
 > - `React.createElement` then creates JavaScript `Object`s called _React elements_
