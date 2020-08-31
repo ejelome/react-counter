@@ -143,13 +143,12 @@ const App = () => {
 // file: src/App.js
 // …
 const App = () => {
-  const title = "counter";
+  // …
   const homePath = "/";
   const {
     location: { pathname: currentPath },
   } = window;
   return <h1>{currentPath === homePath && capitalize(title)}</h1>;
-};
 // …
 ```
 
@@ -165,7 +164,7 @@ const App = () => {
   // …
   const klass = "title";
   // …
-    <h1 className={klass}>…</h1>
+  return <h1 className={klass}>…
 // …
 ```
 
@@ -186,9 +185,11 @@ const App = () => {
 // …
 const App = () => {
   // …
+  return (
     <div className="App">
       <h1 …
     </div>
+  );
 // …
 ```
 
@@ -202,11 +203,13 @@ _This component &hellip;_
 ```javascript
 import React from "react";
 // …
-return (
-  <div className="App">
-    <h1 className={klass}>{currentPath === homePath && capitalize(title)}</h1>
-  </div>
-);
+const App = () => {
+  // …
+  return (
+    <div className="App">
+      <h1 className={klass}>{currentPath === homePath && capitalize(title)}</h1>
+    </div>
+  );
 // …
 ```
 
@@ -215,15 +218,17 @@ _&hellip; is equivalent to &hellip;_
 ```javascript
 import { createElement } from "react";
 // …
-return createElement(
-  "div",
-  { className: "App" },
-  createElement(
-    "h1",
-    { className: klass },
-    currentPath === homePath && capitalize(title)
-  )
-);
+const App = () => {
+  // …
+  return createElement(
+    "div",
+    { className: "App" },
+    createElement(
+      "h1",
+      { className: klass },
+      currentPath === homePath && capitalize(title)
+    )
+  );
 // …
 ```
 
