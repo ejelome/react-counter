@@ -201,6 +201,7 @@ const App = () => {
 _This component &hellip;_
 
 ```javascript
+// file: src/App.js
 import React from "react";
 // …
 const App = () => {
@@ -216,6 +217,7 @@ const App = () => {
 _&hellip; is equivalent to &hellip;_
 
 ```javascript
+// file: src/App.js
 import { createElement } from "react";
 // …
 const App = () => {
