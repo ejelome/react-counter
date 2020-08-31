@@ -22,6 +22,7 @@ Learn [React](https://reactjs.org) with a counter.
       - [2.3. Attribute](#23-attribute)
       - [2.4. Children](#24-children)
       - [2.5. Object representation](#25-object-representation)
+    - [3. Element](#3-element)
   - [License](#license)
 
 <!-- markdown-toc end -->
@@ -86,8 +87,7 @@ To not confuse [React API](https://reactjs.org/docs/react-api.html) with [JavaSc
    $ npm eject        # destroy setup
    ```
 
-   > **Warning:** <br />
-   > `npm eject`'s destructive operation cannot be undone.
+   > **Warning:** <br /> > `npm eject`'s destructive operation cannot be undone.
 
 ### 1. Component example
 
@@ -254,6 +254,26 @@ _&hellip; at the end becomes &hellip;_
 >
 > - [Babel](https://babeljs.io) compiles JSX components into [`React.createElement`](https://reactjs.org/docs/react-api.html#createelement) calls
 > - `React.createElement` then creates JavaScript `Object`s called _React elements_
+
+### 3. Element
+
+```html
+// file: src/App.js
+// …
+  // …
+    <div …
+      <h1 …
+    // …
+```
+
+> **Notes:**
+>
+> - An elements is the smallest building block of a React app
+> - Once created, its attributes and children cannot be changed ([immutable](https://en.wikipedia.org/wiki/Immutable_object))
+> - A component (e.g. `App`) is _composed_ of elements (e.g. `div` and `h1`)
+> - Unlike [DOM](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction) elements, React elements are plain objects
+> - [`ReactDOM`](https://reactjs.org/docs/react-dom.html) handles updating the DOM to match the elements
+> - [`ReactDOM.render`](https://reactjs.org/docs/react-dom.html#render) renders React element into a _root_ DOM node
 
 ---
 
