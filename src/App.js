@@ -6,7 +6,7 @@ const capitalize = (string) => {
   return `${first}${rest}`;
 };
 
-const Title = (props) => <h1 className={props.className}>{props.title}</h1>;
+const Title = ({ className, title }) => <h1 className={className}>{title}</h1>;
 
 const App = () => {
   const title = "counter";
@@ -15,9 +15,13 @@ const App = () => {
   const {
     location: { pathname: currentPath },
   } = window;
+  const props = {
+    title: currentPath === homePath && capitalize(title),
+    className: klass,
+  };
   return (
     <div className="App">
-      <h1 className={klass}>{currentPath === homePath && capitalize(title)}</h1>
+      <Title {...props} />
     </div>
   );
 };

@@ -26,6 +26,7 @@ Learn [React](https://reactjs.org) with a counter.
     - [4. Component](#4-component)
       - [Class-based](#class-based)
       - [Function-based](#function-based)
+    - [5. Props](#5-props)
   - [License](#license)
 
 <!-- markdown-toc end -->
@@ -313,9 +314,37 @@ const Title = (props) => <h1 className={props.className}>{props.title}</h1>;
 > - A component is similar to a function
 > - It has input (`props`) and output (React element)
 > - It is composed of elements or components or both
-> - Component names use [PascalCase](http://wiki.c2.com/?PascalCase) and require their names to be in scope
+> - It must be treated as a pure function along with its `props`
+> - Its names use [PascalCase](http://wiki.c2.com/?PascalCase) and require their names to be in scope
 > - There are two ways to create a component: 1) with [`class`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes) or 2) with `function` (recommended)
 > - `class`-style way of creating components, while will continue to work, is not recommended
+
+### 5. Props
+
+```javascript
+import React from "react";
+// …
+const Title = ({ className, title }) => <h1 className={className}>{title}</h1>;
+// …
+const App = () => {
+  // …
+  const props = {
+    title: currentPath === homePath && capitalize(title),
+    className: klass,
+  };
+  return (
+    <div className="App">
+      <Title {...props} />
+    </div>
+  // …
+```
+
+> **Notes:**
+>
+> - `props` is a single object passed as input to components
+> - It can contain JSX attributes and children elements
+> - It is a read-only property and must not be modified by its component
+> - Its names should be based on its component's PoV (not context use)
 
 ---
 
