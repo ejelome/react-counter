@@ -6,6 +6,8 @@ const capitalize = (string) => {
   return `${first}${rest}`;
 };
 
+const Title = (props) => <h1 className={props.className}>{props.title}</h1>;
+
 const App = () => {
   const title = "counter";
   const klass = "title";

@@ -23,6 +23,9 @@ Learn [React](https://reactjs.org) with a counter.
       - [2.4. Children](#24-children)
       - [2.5. Object representation](#25-object-representation)
     - [3. Element](#3-element)
+    - [4. Component](#4-component)
+      - [Class-based](#class-based)
+      - [Function-based](#function-based)
   - [License](#license)
 
 <!-- markdown-toc end -->
@@ -172,7 +175,7 @@ const App = () => {
 > **Notes:**
 > JSX attribute &hellip;
 >
-> - can either be the element's built-in HTML [attributes](https://developer.mozilla.org/en-US/docs/Glossary/Attribute) or component's [props](https://reactjs.org/docs/components-and-props.html)
+> - can either be the element's built-in HTML [attributes](https://developer.mozilla.org/en-US/docs/Glossary/Attribute) or component's [props](https://reactjs.org/docs/components-and-props.html) (properties)
 > - name use [camelCase](https://en.wikipedia.org/wiki/Camel_case) as naming convention similar to JavaScript [properties](https://developer.mozilla.org/en-US/docs/Glossary/property/JavaScript)
 > - value can either be a JSX expression (`{}`) or a literal `String` _but not both_
 
@@ -271,12 +274,48 @@ _&hellip; at the end becomes &hellip;_
 
 > **Notes:**
 >
-> - An elements is the smallest building block of a React app
+> - An element is the smallest building block of a React app (what appears on screen)
+> - Element names, are written in _lowercase_ and are not required to be in scope
 > - Once created, its attributes and children cannot be changed ([immutable](https://en.wikipedia.org/wiki/Immutable_object))
-> - A component (e.g. `App`) is _composed_ of elements (e.g. `div` and `h1`)
-> - Unlike [DOM](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction) elements, React elements are plain objects
-> - [`ReactDOM`](https://reactjs.org/docs/react-dom.html) handles updating the DOM to match the elements
+> - It can contain a [DOM](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction) tag, a user-defined component, or both
+> - Unlike DOM elements, React elements are plain objects
+> - [`ReactDOM`](https://reactjs.org/docs/react-dom.html) handles updating the DOM to match React elements
 > - [`ReactDOM.render`](https://reactjs.org/docs/react-dom.html#render) renders React element into a _root_ DOM node
+
+### 4. Component
+
+#### Class-based
+
+```javascript
+// file: src/App.js
+import React, { Component } from "react";
+// …
+class Title extends Component {
+  render() {
+    return <h1 className={this.props.className}>{this.props.title}</h1>;
+  }
+}
+// …
+```
+
+#### Function-based
+
+```javascript
+// file: src/App.js
+import React from "react";
+// …
+const Title = (props) => <h1 className={props.className}>{props.title}</h1>;
+// …
+```
+
+> **Notes:**
+>
+> - A component is similar to a function
+> - It has input (`props`) and output (React element)
+> - It is composed of elements or components or both
+> - Component names use [PascalCase](http://wiki.c2.com/?PascalCase) and require their names to be in scope
+> - There are two ways to create a component: 1) with [`class`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes) or 2) with `function` (recommended)
+> - `class`-style way of creating components, while will continue to work, is not recommended
 
 ---
 
