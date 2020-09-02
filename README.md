@@ -5,29 +5,31 @@ Learn [React](https://reactjs.org) with a counter.
 ---
 
 <!-- markdown-toc start - Don't edit this section. Run M-x markdown-toc-refresh-toc -->
+
 **Table of Contents**
 
 - [react-counter](#react-counter)
-    - [Usage](#usage)
-        - [Install](#install)
-        - [Serve](#serve)
-    - [ES2015+](#es2015)
-    - [Lessons](#lessons)
-        - [0. Setup](#0-setup)
-        - [1. Component example](#1-component-example)
-        - [2. JSX](#2-jsx)
-            - [2.1. Expression](#21-expression)
-            - [2.2. Conditional](#22-conditional)
-            - [2.3. Attribute](#23-attribute)
-            - [2.4. Children](#24-children)
-            - [2.5. Object representation](#25-object-representation)
-        - [3. Element](#3-element)
-        - [4. Component](#4-component)
-            - [Class-based](#class-based)
-            - [Function-based](#function-based)
-        - [5. Props](#5-props)
-        - [6. State](#6-state)
-    - [License](#license)
+  - [Usage](#usage)
+    - [Install](#install)
+    - [Serve](#serve)
+  - [ES2015+](#es2015)
+  - [Lessons](#lessons)
+    - [0. Setup](#0-setup)
+    - [1. Component example](#1-component-example)
+    - [2. JSX](#2-jsx)
+      - [2.1. Expression](#21-expression)
+      - [2.2. Conditional](#22-conditional)
+      - [2.3. Attribute](#23-attribute)
+      - [2.4. Children](#24-children)
+      - [2.5. Object representation](#25-object-representation)
+    - [3. Element](#3-element)
+    - [4. Component](#4-component)
+      - [Class-based](#class-based)
+      - [Function-based](#function-based)
+    - [5. Props](#5-props)
+    - [6. State](#6-state)
+    - [7. Event](#7-event)
+  - [License](#license)
 
 <!-- markdown-toc end -->
 
@@ -375,6 +377,36 @@ const App = () => {
 > - It can have an initial value as its argument used on its component's first render
 > - Using its function without any condition results an error (`Too many re-renders`)
 > - It was introduced on React [v16.8.0](https://reactjs.org/blog/2019/02/06/react-v16.8.0.html) to use React features without `class`es
+
+### 7. Event
+
+```javascript
+import React, { useState } from "react";
+// …
+const Counter = ({ initialState = 0 }) => {
+  const [count, setCount] = useState(initialState);
+  const handleIncrement = () => setCount(count + 1);
+  const handleDecrement = () => setCount(count - 1);
+  return (
+    <div>
+      <div>
+        <code>{count}</code>
+      </div>
+      <button onClick={handleDecrement}>-</button>
+      {" / "}
+      <button onClick={handleIncrement}>+</button>
+    </div>
+  );
+};
+// …
+```
+
+> **Notes:**
+>
+> - Handling events in React elements are similar to DOM [events](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Events)
+> - Event names use _camelCase_ instead of _lowercase_ (see [event reference](https://developer.mozilla.org/en-US/docs/Web/Events))
+> - Event handlers are passed as functions and not `String`s
+> - Use [`preventDefault`](https://developer.mozilla.org/en-US/docs/Web/API/Event/preventDefault) to prevent element's default behavior (`return false` do not work)
 
 ---
 
