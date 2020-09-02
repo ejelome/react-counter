@@ -5,29 +5,29 @@ Learn [React](https://reactjs.org) with a counter.
 ---
 
 <!-- markdown-toc start - Don't edit this section. Run M-x markdown-toc-refresh-toc -->
-
 **Table of Contents**
 
 - [react-counter](#react-counter)
-  - [Usage](#usage)
-    - [Install](#install)
-    - [Serve](#serve)
-  - [ES2015+](#es2015)
-  - [Lessons](#lessons)
-    - [0. Setup](#0-setup)
-    - [1. Component example](#1-component-example)
-    - [2. JSX](#2-jsx)
-      - [2.1. Expression](#21-expression)
-      - [2.2. Conditional](#22-conditional)
-      - [2.3. Attribute](#23-attribute)
-      - [2.4. Children](#24-children)
-      - [2.5. Object representation](#25-object-representation)
-    - [3. Element](#3-element)
-    - [4. Component](#4-component)
-      - [Class-based](#class-based)
-      - [Function-based](#function-based)
-    - [5. Props](#5-props)
-  - [License](#license)
+    - [Usage](#usage)
+        - [Install](#install)
+        - [Serve](#serve)
+    - [ES2015+](#es2015)
+    - [Lessons](#lessons)
+        - [0. Setup](#0-setup)
+        - [1. Component example](#1-component-example)
+        - [2. JSX](#2-jsx)
+            - [2.1. Expression](#21-expression)
+            - [2.2. Conditional](#22-conditional)
+            - [2.3. Attribute](#23-attribute)
+            - [2.4. Children](#24-children)
+            - [2.5. Object representation](#25-object-representation)
+        - [3. Element](#3-element)
+        - [4. Component](#4-component)
+            - [Class-based](#class-based)
+            - [Function-based](#function-based)
+        - [5. Props](#5-props)
+        - [6. State](#6-state)
+    - [License](#license)
 
 <!-- markdown-toc end -->
 
@@ -345,6 +345,13 @@ const App = () => {
 > - It can contain JSX attributes and children elements
 > - It is a read-only property and must not be modified by its component
 > - Its names should be based on its component's PoV (not context use)
+
+### 6. State
+
+> **Notes:**
+>
+> - `useState` is a [hook](https://reactjs.org/docs/hooks-intro.html) that allows adding state to a function component
+> - It was introduced on [react-v16.8.0](https://reactjs.org/blog/2019/02/06/react-v16.8.0.html) which enables sharing of stateful logic
 
 ---
 
