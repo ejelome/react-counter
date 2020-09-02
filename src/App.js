@@ -7,12 +7,21 @@ const capitalize = (string) => {
 };
 
 const Title = ({ className, title }) => <h1 className={className}>{title}</h1>;
+
 const Counter = ({ initialState = 0 }) => {
   const [count, setCount] = useState(initialState);
-
-  count < 3 && setCount(count + 1);
-
-  return <code>{count}</code>;
+  const handleIncrement = () => setCount(count + 1);
+  const handleDecrement = () => setCount(count - 1);
+  return (
+    <div>
+      <div>
+        <code>{count}</code>
+      </div>
+      <button onClick={handleDecrement}>-</button>
+      {" / "}
+      <button onClick={handleIncrement}>+</button>
+    </div>
+  );
 };
 
 const App = () => {
