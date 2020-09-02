@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 const capitalize = (string) => {
   const first = string.charAt(0).toUpperCase();
@@ -7,6 +7,13 @@ const capitalize = (string) => {
 };
 
 const Title = ({ className, title }) => <h1 className={className}>{title}</h1>;
+const Counter = ({ initialState = 0 }) => {
+  const [count, setCount] = useState(initialState);
+
+  count < 3 && setCount(count + 1);
+
+  return <code>{count}</code>;
+};
 
 const App = () => {
   const title = "counter";
@@ -22,6 +29,7 @@ const App = () => {
   return (
     <div className="App">
       <Title {...props} />
+      <Counter />
     </div>
   );
 };

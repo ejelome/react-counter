@@ -348,10 +348,33 @@ const App = () => {
 
 ### 6. State
 
+```javascript
+import React, { useState } from "react";
+// …
+const Counter = ({ initialState = 0 }) => {
+  const [count, setCount] = useState(initialState);
+
+  count < 3 && setCount(count + 1);
+
+  return <code>{count}</code>;
+};
+
+const App = () => {
+  // …
+  return (
+    <div className="App">
+      // …
+      <Counter />
+    // …
+```
+
 > **Notes:**
 >
-> - `useState` is a [hook](https://reactjs.org/docs/hooks-intro.html) that allows adding state to a function component
-> - It was introduced on [react-v16.8.0](https://reactjs.org/blog/2019/02/06/react-v16.8.0.html) which enables sharing of stateful logic
+> - `useState` is a [hook](https://reactjs.org/docs/hooks-intro.html) that allows adding local state to a function component
+> - It returns a pair (`[value, function]`) destructured with [`Array` destructuring](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment#Array_destructuring)
+> - It can have an initial value as its argument used on its component's first render
+> - Using its function without any condition results an error (`Too many re-renders`)
+> - It was introduced on React [v16.8.0](https://reactjs.org/blog/2019/02/06/react-v16.8.0.html) to use React features without `class`es
 
 ---
 
