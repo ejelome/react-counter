@@ -55,12 +55,13 @@ $ npm start
 
 To not confuse [React API](https://reactjs.org/docs/react-api.html) with [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules)'s new syntax, the following are [ECMAScript 2015](http://ecma-international.org/ecma-262/6.0)+ new features:
 
-- [`import`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import) will import the new built-in [modules](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules) feature
+- [`import`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import) _imports_ the new built-in [modules](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules) feature
 - [`const`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const) or [constant](<https://en.wikipedia.org/wiki/Constant_(computer_programming)>) is a read-only alternative of [`var` statement](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/var)
-- `() =>` or [arrow function expression](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions) is a new alternative of [`function` declaration](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function)
-- [`export`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/export) will bind [functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function), [objects](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects), or [primitive values](https://developer.mozilla.org/en-US/docs/Glossary/Primitive) from modules
-- `` `${}` `` or [template literals](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals) can embed expressions in [`String`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)s
-- `{:}` or [destructuring assignment](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment) will unpack values from [`Array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)s or [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)s into named variables
+- `() =>` or [arrow function expression](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions) is a new alternative for [`function` declaration](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function)
+- [`export`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/export) binds [functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function), [objects](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects), or [primitive values](https://developer.mozilla.org/en-US/docs/Glossary/Primitive) from modules
+- `` `${}` `` or [template literals](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals) embeds expressions in [`String`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)s
+- `{ name : alias }` or [destructuring assignment](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment) unpacks values from [`Array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)s or [`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)s into named variables
+- `(name = defaultValue)` or [default function parameters](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Default_parameters) sets default value on parameters instead of `undefined`
 
 ---
 
@@ -87,10 +88,10 @@ To not confuse [React API](https://reactjs.org/docs/react-api.html) with [JavaSc
 3. `create-react-app` includes a couple of [`npm-run-script`](https://docs.npmjs.com/cli/run-script)s:
 
    ```shell
-   $ npm start        # start development server
-   $ npm run build    # bundle app into static files for production
-   $ npm [test|tst|t] # start test runner
-   $ npm eject        # destroy setup
+   $ npm start        # starts development server
+   $ npm run build    # bundles app into static files for production
+   $ npm [test|tst|t] # starts test runner
+   $ npm eject        # destroys setup
    ```
 
    > **Warning:** <br />
@@ -111,9 +112,9 @@ export default App;
 >
 > - `src/App.js` file is `import`ed and `render`ed at `src/index.js`
 > - `<h1>Counter</h1>` is not [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML) but [JSX](https://reactjs.org/docs/introducing-jsx.html) (or **J**ava**S**cript [**X**ML](https://developer.mozilla.org/en-US/docs/Web/XML))
-> - JSX support [self-closing tag](https://dev.w3.org/html5/html-author/#self-closing-tag) (`<…/>`) special form
-> - [`ReactDOM`](https://reactjs.org/docs/react-dom.html) escape values embedded in JSX before being rendered
-> - These values are converted to `String`s before being rendered to prevent [XSS](https://en.wikipedia.org/wiki/Cross-site_scripting)
+> - JSX supports [self-closing tag](https://dev.w3.org/html5/html-author/#self-closing-tag) (`<…/>`) special form
+> - [`ReactDOM`](https://reactjs.org/docs/react-dom.html) escapes values embedded in JSX before render
+> - These values are converted to `String`s before render to prevent [XSS](https://en.wikipedia.org/wiki/Cross-site_scripting)
 
 ### 2. JSX
 
@@ -136,7 +137,7 @@ const App = () => {
 ```
 
 > **Notes:**
-> JSX expression &hellip;
+> JSX expressions &hellip;
 >
 > - are pairs of curly braces (`{}`) that wraps code
 > - become regular `function` calls evaluated to objects
@@ -160,7 +161,7 @@ const App = () => {
 ```
 
 > **Note:** <br />
-> JSX conditional can be any JavaScript [conditionals](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/conditionals).
+> JSX conditionals can be any JavaScript [conditionals](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/conditionals).
 
 #### 2.3. Attribute
 
@@ -176,14 +177,14 @@ const App = () => {
 ```
 
 > **Notes:**
-> JSX attribute &hellip;
+> JSX attributes &hellip;
 >
-> - can either be the element's built-in HTML [attributes](https://developer.mozilla.org/en-US/docs/Glossary/Attribute) or component's [props](https://reactjs.org/docs/components-and-props.html) (properties)
-> - name use [camelCase](https://en.wikipedia.org/wiki/Camel_case) as naming convention similar to JavaScript [properties](https://developer.mozilla.org/en-US/docs/Glossary/property/JavaScript)
-> - value can either be a JSX expression (`{}`) or a literal `String` _but not both_
+> - are either the element's built-in HTML [attributes](https://developer.mozilla.org/en-US/docs/Glossary/Attribute) or component's [props](https://reactjs.org/docs/components-and-props.html) (properties)
+> - use [camelCase](https://en.wikipedia.org/wiki/Camel_case) as naming convention similar to JavaScript [properties](https://developer.mozilla.org/en-US/docs/Glossary/property/JavaScript)
+> - can use JSX expressions (`{}`) or literal `String`s _but not both_ as values
 
 > **Warning:** <br />
-> JSX expression in quotes is evaluated as a literal `String` (e.g. `"{klass}"` becomes `{klass}` not `title`).
+> JSX expressions in quotes are evaluated as literal `String`s (e.g. `"{klass}"` becomes `{klass}` not `title`).
 
 #### 2.4. Children
 
@@ -201,7 +202,7 @@ const App = () => {
 ```
 
 > **Note:** <br />
-> JSX children can be passed as a nested element or to `props`' attribute, `children`.
+> JSX children are passed as nested elements or to `props`' `children` attribute.
 
 #### 2.5. Object representation
 
@@ -241,7 +242,7 @@ const App = () => {
 // …
 ```
 
-_&hellip; at the end becomes &hellip;_
+_&hellip; and at the end becomes &hellip;_
 
 ```javascript
 {
@@ -277,13 +278,13 @@ _&hellip; at the end becomes &hellip;_
 
 > **Notes:**
 >
-> - An element is the smallest building block of a React app (what appears on screen)
-> - Element names, are written in _lowercase_ and are not required to be in scope
-> - Once created, its attributes and children cannot be changed ([immutable](https://en.wikipedia.org/wiki/Immutable_object))
-> - It can contain a [DOM](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction) tag, a user-defined component, or both
-> - Unlike DOM elements, React elements are plain objects
+> - Elements are the smallest building blocks of a React app (what appears on screen)
+> - Their names are written in _lowercase_ and are not required to be in scope
+> - Once created, their attributes and children cannot be changed ([immutable](https://en.wikipedia.org/wiki/Immutable_object))
+> - They can contain [DOM](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction) elements, user-defined components, or both
+> - Unlike DOM elements, React elements are plain JavaScript objects
 > - [`ReactDOM`](https://reactjs.org/docs/react-dom.html) handles updating the DOM to match React elements
-> - [`ReactDOM.render`](https://reactjs.org/docs/react-dom.html#render) renders React element into a _root_ DOM node
+> - [`ReactDOM.render`](https://reactjs.org/docs/react-dom.html#render) renders React elements into a _root_ DOM node
 
 ### 4. Component
 
@@ -313,17 +314,18 @@ const Title = (props) => <h1 className={props.className}>{props.title}</h1>;
 
 > **Notes:**
 >
-> - A component is similar to a function
-> - It has input (`props`) and output (React element)
-> - It is composed of elements or components or both
-> - It must be treated as a pure function along with its `props`
-> - Its names use [PascalCase](http://wiki.c2.com/?PascalCase) and require their names to be in scope
-> - There are two ways to create a component: 1) with [`class`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes) or 2) with `function` (recommended)
-> - `class`-style way of creating components, while will continue to work, is not recommended
+> - Components are similar to functions
+> - They have input (`props`) and output (React element)
+> - They are composed of elements or components or both
+> - They should be treated as pure functions along with their `props`
+> - Their names use [PascalCase](http://wiki.c2.com/?PascalCase) and are required to be in scope
+> - There are two ways to create components: 1) with [`class`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes) or 2) with `function` (recommended)
+> - `class`-style way of creating components, while will continue to work, is not anymore recommended
 
 ### 5. Props
 
 ```javascript
+// file: src/App.js
 import React from "react";
 // …
 const Title = ({ className, title }) => <h1 className={className}>{title}</h1>;
@@ -344,13 +346,14 @@ const App = () => {
 > **Notes:**
 >
 > - `props` is a single object passed as input to components
-> - It can contain JSX attributes and children elements
-> - It is a read-only property and must not be modified by its component
-> - Its names should be based on its component's PoV (not context use)
+> - It contains both JSX attributes and children elements
+> - It is a read-only property and must not be modified by components
+> - Its property names should base on its component's PoV (not context use)
 
 ### 6. State
 
 ```javascript
+// file: src/App.js
 import React, { useState } from "react";
 // …
 const Counter = ({ initialState = 0 }) => {
@@ -372,8 +375,8 @@ const App = () => {
 
 > **Notes:**
 >
-> - `useState` is a [hook](https://reactjs.org/docs/hooks-intro.html) that allows adding local state to a function component
-> - It returns a pair (`[value, function]`) destructured with [`Array` destructuring](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment#Array_destructuring)
+> - `useState` is a [hook](https://reactjs.org/docs/hooks-intro.html) that allows adding local state to function components
+> - It returns a pair (`[state, function]`) destructured with [`Array` destructuring](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment#Array_destructuring)
 > - It can have an initial value as its argument used on its component's first render
 > - Using its function without any condition results an error (`Too many re-renders`)
 > - It was introduced on React [v16.8.0](https://reactjs.org/blog/2019/02/06/react-v16.8.0.html) to use React features without `class`es
@@ -381,10 +384,10 @@ const App = () => {
 ### 7. Event
 
 ```javascript
-import React, { useState } from "react";
+// file: src/App.js
 // …
-const Counter = ({ initialState = 0 }) => {
-  const [count, setCount] = useState(initialState);
+const Counter …
+  // …
   const handleIncrement = () => setCount(count + 1);
   const handleDecrement = () => setCount(count - 1);
   return (
