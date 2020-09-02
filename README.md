@@ -5,29 +5,29 @@ Learn [React](https://reactjs.org) with a counter.
 ---
 
 <!-- markdown-toc start - Don't edit this section. Run M-x markdown-toc-refresh-toc -->
-
 **Table of Contents**
 
 - [react-counter](#react-counter)
-  - [Usage](#usage)
-    - [Install](#install)
-    - [Serve](#serve)
-  - [ES2015+](#es2015)
-  - [Lessons](#lessons)
-    - [0. Setup](#0-setup)
-    - [1. Component example](#1-component-example)
-    - [2. JSX](#2-jsx)
-      - [2.1. Expression](#21-expression)
-      - [2.2. Conditional](#22-conditional)
-      - [2.3. Attribute](#23-attribute)
-      - [2.4. Children](#24-children)
-      - [2.5. Object representation](#25-object-representation)
-    - [3. Element](#3-element)
-    - [4. Component](#4-component)
-      - [Class-based](#class-based)
-      - [Function-based](#function-based)
-    - [5. Props](#5-props)
-  - [License](#license)
+    - [Usage](#usage)
+        - [Install](#install)
+        - [Serve](#serve)
+    - [ES2015+](#es2015)
+    - [Lessons](#lessons)
+        - [0. Setup](#0-setup)
+        - [1. Component example](#1-component-example)
+        - [2. JSX](#2-jsx)
+            - [2.1. Expression](#21-expression)
+            - [2.2. Conditional](#22-conditional)
+            - [2.3. Attribute](#23-attribute)
+            - [2.4. Children](#24-children)
+            - [2.5. Object representation](#25-object-representation)
+        - [3. Element](#3-element)
+        - [4. Component](#4-component)
+            - [Class-based](#class-based)
+            - [Function-based](#function-based)
+        - [5. Props](#5-props)
+        - [6. State](#6-state)
+    - [License](#license)
 
 <!-- markdown-toc end -->
 
@@ -345,6 +345,36 @@ const App = () => {
 > - It can contain JSX attributes and children elements
 > - It is a read-only property and must not be modified by its component
 > - Its names should be based on its component's PoV (not context use)
+
+### 6. State
+
+```javascript
+import React, { useState } from "react";
+// …
+const Counter = ({ initialState = 0 }) => {
+  const [count, setCount] = useState(initialState);
+
+  count < 3 && setCount(count + 1);
+
+  return <code>{count}</code>;
+};
+
+const App = () => {
+  // …
+  return (
+    <div className="App">
+      // …
+      <Counter />
+    // …
+```
+
+> **Notes:**
+>
+> - `useState` is a [hook](https://reactjs.org/docs/hooks-intro.html) that allows adding local state to a function component
+> - It returns a pair (`[value, function]`) destructured with [`Array` destructuring](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment#Array_destructuring)
+> - It can have an initial value as its argument used on its component's first render
+> - Using its function without any condition results an error (`Too many re-renders`)
+> - It was introduced on React [v16.8.0](https://reactjs.org/blog/2019/02/06/react-v16.8.0.html) to use React features without `class`es
 
 ---
 
