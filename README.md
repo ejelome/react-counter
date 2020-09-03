@@ -321,6 +321,8 @@ const Title = (props) => <h1 className={props.className}>{props.title}</h1>;
 > - Their names use [PascalCase](http://wiki.c2.com/?PascalCase) and are required to be in scope
 > - There are two ways to create components: 1) with [`class`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes) or 2) with `function` (recommended)
 > - `class`-style way of creating components, while will continue to work, is not anymore recommended
+> - Return components using JSX conditionals or expressions for _conditional rendering_
+> - Return `null` to hide components from rendering (but code blocks within components still executes)
 
 ### 5. Props
 
