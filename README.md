@@ -29,6 +29,7 @@ Learn [React](https://reactjs.org) with a counter.
     - [5. Props](#5-props)
     - [6. State](#6-state)
     - [7. Event](#7-event)
+    - [8. List](#8-list)
   - [License](#license)
 
 <!-- markdown-toc end -->
@@ -412,6 +413,38 @@ const Counter …
 > - Event names use _camelCase_ instead of _lowercase_ (see [event reference](https://developer.mozilla.org/en-US/docs/Web/Events))
 > - Event handlers are passed as functions and not `String`s
 > - Use [`preventDefault`](https://developer.mozilla.org/en-US/docs/Web/API/Event/preventDefault) to prevent element's default behavior (`return false` do not work)
+
+### 8. List
+
+```javascript
+// file: src/App.js
+// …
+const Counter …
+  // …
+  const operations = [
+    { key: "decrement", symbol: "-", handler: () => setCount(count - 1) },
+    { key: "increment", symbol: "+", handler: () => setCount(count + 1) },
+  ];
+  return (
+    <div>
+      // …
+      {operations.map(({ key, symbol, handler }) => (
+        <button key={key} onClick={handler}>
+          {symbol}
+        </button>
+      ))}
+      // …
+```
+
+> **Notes:**
+>
+> - Use `Array`'s [`map`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map) method to render multiple components
+> - `key` is a special string attribute required on list of elements
+> - It helps React to identify which items were modified
+> - Only elements inside the `map` require unique keys
+> - Unique keys are not required globally but only to siblings
+> - Use keys that do not change (e.g. `id` instead of `index`)
+> - Use `Object`'s [`toString`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/toString) method to convert objects to `String`s
 
 ---
 

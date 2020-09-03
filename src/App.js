@@ -10,16 +10,20 @@ const Title = ({ className, title }) => <h1 className={className}>{title}</h1>;
 
 const Counter = ({ initialState = 0 }) => {
   const [count, setCount] = useState(initialState);
-  const handleIncrement = () => setCount(count + 1);
-  const handleDecrement = () => setCount(count - 1);
+  const operations = [
+    { key: "decrement", symbol: "-", handler: () => setCount(count - 1) },
+    { key: "increment", symbol: "+", handler: () => setCount(count + 1) },
+  ];
   return (
     <div>
       <div>
         <code>{count}</code>
       </div>
-      <button onClick={handleDecrement}>-</button>
-      {" / "}
-      <button onClick={handleIncrement}>+</button>
+      {operations.map(({ key, symbol, handler }) => (
+        <button key={key} onClick={handler}>
+          {symbol}
+        </button>
+      ))}
     </div>
   );
 };
