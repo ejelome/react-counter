@@ -24,8 +24,6 @@ Learn [React](https://reactjs.org) with a counter.
       - [2.5. Object representation](#25-object-representation)
     - [3. Element](#3-element)
     - [4. Component](#4-component)
-      - [Class-based](#class-based)
-      - [Function-based](#function-based)
     - [5. Props](#5-props)
     - [6. State](#6-state)
     - [7. Event](#7-event)
@@ -288,22 +286,6 @@ _&hellip; and at the end becomes &hellip;_
 > - [`ReactDOM.render`](https://reactjs.org/docs/react-dom.html#render) renders React elements into a _root_ DOM node
 
 ### 4. Component
-
-#### Class-based
-
-```javascript
-// file: src/App.js
-import React, { Component } from "react";
-// …
-class Title extends Component {
-  render() {
-    return <h1 className={this.props.className}>{this.props.title}</h1>;
-  }
-}
-// …
-```
-
-#### Function-based
 
 ```javascript
 // file: src/App.js
