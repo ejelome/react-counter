@@ -31,6 +31,7 @@ Learn [React](https://reactjs.org) with a counter.
     - [9. Form](#9-form)
     - [10. Thinking in React](#10-thinking-in-react)
     - [Bonus](#bonus)
+  - [References](#references)
   - [License](#license)
 
 <!-- markdown-toc end -->
@@ -493,6 +494,12 @@ Have a consistent thought process when building React apps, e.g.:
 - Use [React Development Tools](https://github.com/facebook/react/tree/master/packages/react-devtools) to inspect and debug `props` and state
 - Prefer [composition](<https://en.wikipedia.org/wiki/Function_composition_(computer_science)>) over [inheritance](<https://en.wikipedia.org/wiki/Inheritance_(object-oriented_programming)>) for component hierarchy
 - Components should ideally only do one thing well ([single-responsibility principle](https://en.wikipedia.org/wiki/Single-responsibility_principle))
+
+---
+
+## References
+
+- [React](https://reactjs.org/docs) (Main Concepts)
 
 ---
 
