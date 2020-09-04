@@ -28,6 +28,7 @@ Learn [React](https://reactjs.org) with a counter.
     - [6. State](#6-state)
     - [7. Event](#7-event)
     - [8. List](#8-list)
+    - [9. Form](#9-form)
   - [License](#license)
 
 <!-- markdown-toc end -->
@@ -427,6 +428,50 @@ const Counter …
 > - Unique keys are not required globally but only to siblings
 > - Use keys that do not change (e.g. `id` instead of `index`)
 > - Use `Object`'s [`toString`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/toString) method to convert objects to `String`s
+
+### 9. Form
+
+```javascript
+// file: src/App.js
+// …
+const Title … => {
+  const [newTitle, setNewTitle] = useState(title);
+  const [newValue, setNewValue] = useState(title);
+
+  const handleChange = ({ target: { value } }) => {
+    setNewTitle(value);
+    setNewValue(value);
+  };
+
+  return (
+    <div>
+      <form>
+        <label htmlFor="new-title">New title:</label>
+        <input
+          id="new-title"
+          type="text"
+          value={newValue}
+          onChange={handleChange}
+        />
+      </form>
+      <h1 className={className}>{newTitle}</h1>
+    </div>
+  );
+// …
+```
+
+> **Notes:**
+>
+> - Form elements such as [`<input>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input), [`<textarea>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/textarea) and [`<select>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/select) are called _controlled components_
+> - Controlled components use values passed to `props` and changes through React events
+> - In controlled components, values of form elements driven by React's state
+> - The `<input>` element with `type="file"` as attribute is an example of uncontrolled component (read-only)
+> - Use `htmlFor` instead of `for` (a [reserved keyword](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Lexical_grammar#Keywords)) attribute in [`<label>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/label) element
+> - Use `value` attribute for controlled or `defaultValue` for uncontrolled but not both
+> - Use `value` attribute for `<input>`, `<textarea>` and `<select>` elements to set values
+> - Use `[name]` (`event.target.name`) to dynamically assign `value` to/from multiple inputs
+> - Providing `null` or `undefined` values can accidentally make form elements editable
+> - For a complete form solution, see [Formik](https://formik.org) form library (it also supports React Native)
 
 ---
 
