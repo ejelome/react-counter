@@ -1,3 +1,5 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/5f159f75-490e-46e2-af2d-217403965063/deploy-status)](https://app.netlify.com/sites/ejelome-react-counter/deploys)
+
 # react-counter
 
 Learn [React](https://reactjs.org) with a counter.
@@ -9,6 +11,7 @@ Learn [React](https://reactjs.org) with a counter.
 **Table of Contents**
 
 - [react-counter](#react-counter)
+  - [Demo](#demo)
   - [Usage](#usage)
     - [Install](#install)
     - [Serve](#serve)
@@ -35,6 +38,12 @@ Learn [React](https://reactjs.org) with a counter.
   - [License](#license)
 
 <!-- markdown-toc end -->
+
+---
+
+## Demo
+
+See <https://ejelome-react-counter.netlify.app>.
 
 ---
 
