@@ -30,6 +30,7 @@ Learn [React](https://reactjs.org) with a counter.
     - [8. List](#8-list)
     - [9. Form](#9-form)
     - [10. Thinking in React](#10-thinking-in-react)
+    - [Bonus](#bonus)
   - [License](#license)
 
 <!-- markdown-toc end -->
@@ -484,6 +485,14 @@ Have a consistent thought process when building React apps, e.g.:
 4. **Identify the minimal representation of UI state** (make UI interactive with state; keep it [DRY](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself))
 5. **Identify where your state should live** (identify which components will own these state)
 6. **Add inverse data flow** (support data flowing the other way around)
+
+### Bonus
+
+- There should be a [single source of truth](https://en.wikipedia.org/wiki/Single_source_of_truth) for any data that changes
+- Prefer [unidirectional data flow](<https://en.wikipedia.org/wiki/Unidirectional_Data_Flow_(computer_science)>) instead of [two-way binding](https://angular.io/guide/two-way-binding) of data
+- Use [React Development Tools](https://github.com/facebook/react/tree/master/packages/react-devtools) to inspect and debug `props` and state
+- Prefer [composition](<https://en.wikipedia.org/wiki/Function_composition_(computer_science)>) over [inheritance](<https://en.wikipedia.org/wiki/Inheritance_(object-oriented_programming)>) for component hierarchy
+- Components should ideally only do one thing well ([single-responsibility principle](https://en.wikipedia.org/wiki/Single-responsibility_principle))
 
 ---
 
