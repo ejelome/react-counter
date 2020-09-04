@@ -29,6 +29,7 @@ Learn [React](https://reactjs.org) with a counter.
     - [7. Event](#7-event)
     - [8. List](#8-list)
     - [9. Form](#9-form)
+    - [10. Thinking in React](#10-thinking-in-react)
   - [License](#license)
 
 <!-- markdown-toc end -->
@@ -472,6 +473,17 @@ const Title … => {
 > - Use `[name]` (`event.target.name`) to dynamically assign `value` to/from multiple inputs
 > - Providing `null` or `undefined` values can accidentally make form elements editable
 > - For a complete form solution, see [Formik](https://formik.org) form library (it also supports React Native)
+
+### 10. Thinking in React
+
+Have a consistent thought process when building React apps, e.g.:
+
+1. **Start with a mock** (HTML to display data and [JSON](https://www.json.org/json-en.html) as source of data)
+2. **Break UI into a component hierarchy** (boxes then bullet points)
+3. **Build a static version** first (only use `props`; reserve state for interactivity)
+4. **Identify the minimal representation of UI state** (make UI interactive with state; keep it [DRY](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself))
+5. **Identify where your state should live** (identify which components will own these state)
+6. **Add inverse data flow** (support data flowing the other way around)
 
 ---
 
