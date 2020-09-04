@@ -6,7 +6,30 @@ const capitalize = (string) => {
   return `${first}${rest}`;
 };
 
-const Title = ({ className, title }) => <h1 className={className}>{title}</h1>;
+const Title = ({ className, title }) => {
+  const [newTitle, setNewTitle] = useState(title);
+  const [newValue, setNewValue] = useState(title);
+
+  const handleChange = ({ target: { value } }) => {
+    setNewTitle(value);
+    setNewValue(value);
+  };
+
+  return (
+    <div>
+      <form>
+        <label htmlFor="new-title">New title:</label>
+        <input
+          id="new-title"
+          type="text"
+          value={newValue}
+          onChange={handleChange}
+        />
+      </form>
+      <h1 className={className}>{newTitle}</h1>
+    </div>
+  );
+};
 
 const Counter = ({ initialState = 0 }) => {
   const [count, setCount] = useState(initialState);
