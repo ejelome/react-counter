@@ -2,7 +2,7 @@
 
 # react-counter
 
-Learn [React](https://reactjs.org) with a counter.
+Learn [React](https://reactjs.org) with a counter
 
 ---
 
