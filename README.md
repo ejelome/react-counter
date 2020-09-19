@@ -12,9 +12,12 @@ Learn [React](https://reactjs.org) with a counter.
 
 - [react-counter](#react-counter)
   - [Demo](#demo)
-  - [Usage](#usage)
+  - [Setup](#setup)
     - [Install](#install)
+  - [Usage](#usage)
     - [Serve](#serve)
+    - [Test](#test)
+    - [Build](#build)
   - [ES2015+](#es2015)
   - [Lessons](#lessons)
     - [0. Setup](#0-setup)
@@ -47,7 +50,7 @@ See <https://ejelome-react-counter.netlify.app>.
 
 ---
 
-## Usage
+## Setup
 
 ### Install
 
@@ -55,10 +58,26 @@ See <https://ejelome-react-counter.netlify.app>.
 $ npm [install|isntall|add|i]
 ```
 
+---
+
+## Usage
+
 ### Serve
 
 ```shell
 $ npm start
+```
+
+### Test
+
+```shell
+$ npm [test|tst|t]
+```
+
+### Build
+
+```shell
+$ npm run build
 ```
 
 ---
