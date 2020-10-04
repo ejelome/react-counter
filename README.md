@@ -527,7 +527,7 @@ Have a consistent thought process when building React apps, e.g.:
 
 ## References
 
-- [React](https://reactjs.org/docs) (Main Concepts)
+- [Main Concepts](https://reactjs.org/docs/hello-world.html)
 
 ---
 
