@@ -130,14 +130,20 @@ To not confuse [React API](https://reactjs.org/docs/react-api.html) with [JavaSc
 
 ### 1. Component example
 
+<details>
+  <summary>src/App.js</summary>
+
 ```javascript
-// file: src/App.js
 import React from "react";
 
 const App = () => <h1>Counter</h1>;
 
 export default App;
 ```
+
+</details>
+
+[&#9654; Run code &rarr;](https://codesandbox.io/s/react-counter-lesson-1-hsl0v)
 
 > **Notes:**
 >
@@ -151,21 +157,32 @@ export default App;
 
 #### 2.1. Expression
 
-```javascript
-// file: src/App.js
-// …
-const capitalize = (string) => {
-  const first = string.charAt(0).toUpperCase();
-  const rest = string.slice(1);
-  return `${first}${rest}`;
-};
+<details>
+  <summary>src/App.js</summary>
 
-const App = () => {
-  const title = "counter";
-  return <h1>{capitalize(title)}</h1>;
-};
-// …
+```diff
+ import React from "react";
+
+-const App = () => <h1>Counter</h1>;
++const capitalize = (string) => {
++  const first = string.charAt(0).toUpperCase();
++  const rest = string.slice(1);
++
++  return `${first}${rest}`;
++};
++
++const App = () => {
++  const title = "counter";
++
++  return <h1>{capitalize(title)}</h1>;
++};
+
+ export default App;
 ```
+
+</details>
+
+[&#9654; Run code &rarr;](https://codesandbox.io/s/react-counter-lesson-21-hye93)
 
 > **Notes:**
 > JSX expressions &hellip;
@@ -178,34 +195,74 @@ const App = () => {
 
 #### 2.2. Conditional
 
-```javascript
-// file: src/App.js
-// …
-const App = () => {
-  // …
-  const homePath = "/";
-  const {
-    location: { pathname: currentPath },
-  } = window;
-  return <h1>{currentPath === homePath && capitalize(title)}</h1>;
-// …
+<details>
+  <summary>src/App.js</summary>
+
+```diff
+ import React from "react";
+
+ const capitalize = (string) => {
+   const first = string.charAt(0).toUpperCase();
+   const rest = string.slice(1);
+
+   return `${first}${rest}`;
+ };
+
+ const App = () => {
+   const title = "counter";
+
+-  return <h1>{capitalize(title)}</h1>;
++  const homePath = "/";
++  const currentPath = window.location.pathname;
++
++  return <h1>{currentPath === homePath && capitalize(title)}</h1>;
+ };
+
+ export default App;
 ```
+
+</details>
+
+[&#9654; Run code &rarr;](https://codesandbox.io/s/react-counter-lesson-22-uol2t)
 
 > **Note:** <br />
 > JSX conditionals can be any JavaScript [conditionals](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/conditionals).
 
 #### 2.3. Attribute
 
-```javascript
-// file: src/App.js
-// …
-const App = () => {
-  // …
-  const klass = "title";
-  // …
-  return <h1 className={klass}>…
-// …
+<details>
+  <summary>src/App.js</summary>
+
+```diff
+ import React from "react";
+
+ const capitalize = (string) => {
+   const first = string.charAt(0).toUpperCase();
+   const rest = string.slice(1);
+
+   return `${first}${rest}`;
+ };
+
+ const App = () => {
+   const title = "counter";
+
+   const homePath = "/";
+   const currentPath = window.location.pathname;
+
+-  return <h1>{currentPath === homePath && capitalize(title)}</h1>;
++  const klass = "title";
++
++  return (
++    <h1 className={klass}>{currentPath === homePath && capitalize(title)}</h1>
++  );
+ };
+
+ export default App;
 ```
+
+</details>
+
+[&#9654; Run code &rarr;](https://codesandbox.io/s/react-counter-lesson-23-tio7b)
 
 > **Notes:**
 > JSX attributes &hellip;
@@ -219,28 +276,51 @@ const App = () => {
 
 #### 2.4. Children
 
-```javascript
-// file: src/App.js
-// …
-const App = () => {
-  // …
-  return (
-    <div className="App">
-      <h1 …>
-    </div>
-  );
-// …
+<details>
+  <summary>src/App.js</summary>
+
+```diff
+ import React from "react";
+
+ const capitalize = (string) => {
+   const first = string.charAt(0).toUpperCase();
+   const rest = string.slice(1);
+
+   return `${first}${rest}`;
+ };
+
+ const App = () => {
+   const title = "counter";
+
+   const homePath = "/";
+   const currentPath = window.location.pathname;
+
+   const klass = "title";
+
+   return (
+-    <h1 className={klass}>{currentPath === homePath && capitalize(title)}</h1>
++    <div className="App">
++      <h1 className={klass}>{currentPath === homePath && capitalize(title)}</h1>
++    </div>
+   );
+ };
+
+ export default App;
 ```
+
+</details>
+
+[&#9654; Run code &rarr;](https://codesandbox.io/s/react-counter-lesson-24-ngq1l)
 
 > **Note:** <br />
 > JSX children are passed as nested elements or to `props`' `children` attribute.
 
 #### 2.5. Object representation
 
-_This component &hellip;_
+<details>
+  <summary>This component:</summary>
 
 ```javascript
-// file: src/App.js
 import React from "react";
 // …
 const App = () => {
@@ -253,10 +333,12 @@ const App = () => {
 // …
 ```
 
-_&hellip; is equivalent to &hellip;_
+</details>
+
+<details>
+  <summary>Is equivalent to:</summary>
 
 ```javascript
-// file: src/App.js
 import { createElement } from "react";
 // …
 const App = () => {
@@ -273,7 +355,10 @@ const App = () => {
 // …
 ```
 
-_&hellip; and at the end becomes &hellip;_
+</details>
+
+<details>
+  <summary>At the end becomes:</summary>
 
 ```javascript
 {
@@ -291,6 +376,8 @@ _&hellip; and at the end becomes &hellip;_
 };
 ```
 
+</details>
+
 > **Notes:**
 >
 > - [Babel](https://babeljs.io) compiles JSX components into [`React.createElement`](https://reactjs.org/docs/react-api.html#createelement) calls
@@ -298,14 +385,18 @@ _&hellip; and at the end becomes &hellip;_
 
 ### 3. Element
 
-```javascript
-// file: src/App.js
+<details>
+  <summary>src/App.js</summary>
+
+```html
 // …
-  // …
-    <div …>
-      <h1 …>
-    // …
+<div …>
+  <h1 …>…</h1>
+</div>
+// …
 ```
+
+</details>
 
 > **Notes:**
 >
@@ -319,13 +410,44 @@ _&hellip; and at the end becomes &hellip;_
 
 ### 4. Component
 
-```javascript
-// file: src/App.js
-import React from "react";
-// …
-const Title = (props) => <h1 className={props.className}>{props.title}</h1>;
-// …
+<details>
+  <summary>src/App.js</summary>
+
+```diff
+ import React from "react";
+
+ const capitalize = (string) => {
+   const first = string.charAt(0).toUpperCase();
+   const rest = string.slice(1);
+
+   return `${first}${rest}`;
+ };
+
++const Title = (props) => <h1 className={props.className}>{props.message}</h1>;
++
+ const App = () => {
+   const title = "counter";
+
+   const homePath = "/";
+   const currentPath = window.location.pathname;
+
+   const klass = "title";
++  const text = currentPath === homePath && capitalize(title);
+
+   return (
+     <div className="App">
+-      <h1 className={klass}>{currentPath === homePath && capitalize(title)}</h1>
++      <Title className={klass} message={text} />
+     </div>
+   );
+ };
+
+ export default App;
 ```
+
+</details>
+
+[&#9654; Run code &rarr;](https://codesandbox.io/s/react-counter-lesson-4-kqmud)
 
 > **Notes:**
 >
@@ -336,29 +458,57 @@ const Title = (props) => <h1 className={props.className}>{props.title}</h1>;
 > - Their names use [PascalCase](http://wiki.c2.com/?PascalCase) and are required to be in scope
 > - There are two ways to create components: 1) with [`class`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes) or 2) with `function` (recommended)
 > - `class`-style way of creating components, while will continue to work, is not anymore recommended
-> - Return components using JSX conditionals or expressions for _conditional rendering_
-> - Return `null` to hide components from rendering (but code blocks within components still executes)
+> - They can return components using JSX conditionals or expressions for _conditional rendering_
+> - They can return `null` to hide components from rendering (but code within components still executes)
 
 ### 5. Props
 
-```javascript
-// file: src/App.js
-import React from "react";
-// …
-const Title = ({ className, title }) => <h1 className={className}>{title}</h1>;
-// …
-const App = () => {
-  // …
-  const props = {
-    title: currentPath === homePath && capitalize(title),
-    className: klass,
-  };
-  return (
-    <div className="App">
-      <Title {...props} />
-    </div>
-  // …
+<details>
+  <summary>src/App.js</summary>
+
+```diff
+ import React from "react";
+
+ const capitalize = (string) => {
+   const first = string.charAt(0).toUpperCase();
+   const rest = string.slice(1);
+
+   return `${first}${rest}`;
+ };
+
+-const Title = (props) => <h1 className={props.className}>{props.message}</h1>;
++const Title = ({ className, message }) => (
++  <h1 className={className}>{message}</h1>
++);
+
+ const App = () => {
+   const title = "counter";
+
+   const homePath = "/";
+   const currentPath = window.location.pathname;
+
+   const klass = "title";
+   const text = currentPath === homePath && capitalize(title);
+
++  const props = {
++    className: klass,
++    message: text,
++  };
++
+   return (
+     <div className="App">
+-      <Title className={klass} message={text} />
++      <Title {...props} />
+     </div>
+   );
+ };
+
+ export default App;
 ```
+
+</details>
+
+[&#9654; Run code &rarr;](https://codesandbox.io/s/react-counter-lesson-5-02qnb)
 
 > **Notes:**
 >
@@ -369,26 +519,60 @@ const App = () => {
 
 ### 6. State
 
-```javascript
-// file: src/App.js
-import React, { useState } from "react";
-// …
-const Counter = ({ initialState = 0 }) => {
-  const [count, setCount] = useState(initialState);
+<details>
+  <summary>src/App.js</summary>
 
-  count < 3 && setCount(count + 1);
+```diff
+-import React from "react";
++import React, { useState } from "react";
 
-  return <code>{count}</code>;
-};
+ const capitalize = (string) => {
+   const first = string.charAt(0).toUpperCase();
+   const rest = string.slice(1);
 
-const App = () => {
-  // …
-  return (
-    <div className="App">
-      // …
-      <Counter />
-    // …
+   return `${first}${rest}`;
+ };
+
+ const Title = ({ className, message }) => (
+   <h1 className={className}>{message}</h1>
+ );
+
++const Counter = ({ initialCount = 0 }) => {
++  const [count, setCount] = useState(initialCount);
++
++  count < 2 && setCount(count + 1);
++
++  return <code>{count}</code>;
++};
++
+ const App = () => {
+   const title = "counter";
+
+   const homePath = "/";
+   const currentPath = window.location.pathname;
+
+   const klass = "title";
+   const text = currentPath === homePath && capitalize(title);
+
+   const props = {
+     className: klass,
+     message: text,
+   };
+
+   return (
+     <div className="App">
+       <Title {...props} />
++      <Counter initialCount={1} />
+     </div>
+   );
+ };
+
+ export default App;
 ```
+
+</details>
+
+[&#9654; Run code &rarr;](https://codesandbox.io/s/react-counter-lesson-6-jvsh0)
 
 > **Notes:**
 >
@@ -400,26 +584,69 @@ const App = () => {
 
 ### 7. Event
 
-```javascript
-// file: src/App.js
-// …
-const Counter …
-  // …
-  const handleIncrement = () => setCount(count + 1);
-  const handleDecrement = () => setCount(count - 1);
-  return (
-    <div>
-      <div>
-        <code>{count}</code>
-      </div>
-      <button onClick={handleDecrement}>-</button>
-      {" / "}
-      <button onClick={handleIncrement}>+</button>
-    </div>
-  );
-};
-// …
+<details>
+  <summary>src/App.js</summary>
+
+```diff
+ import React, { useState } from "react";
+
+ const capitalize = (string) => {
+   const first = string.charAt(0).toUpperCase();
+   const rest = string.slice(1);
+
+   return `${first}${rest}`;
+ };
+
+ const Title = ({ className, message }) => (
+   <h1 className={className}>{message}</h1>
+ );
+
+ const Counter = ({ initialCount = 0 }) => {
+   const [count, setCount] = useState(initialCount);
+
+-  count < 2 && setCount(count + 1);
++  const handleDecrement = () => setCount(count - 1);
+
+-  return <code>{count}</code>;
++  const handleIncrement = () => setCount(count + 1);
++
++  return (
++    <div>
++      <button onClick={handleDecrement}>-</button>
++      <code>{count}</code>
++      <button onClick={handleIncrement}>+</button>
++    </div>
++  );
+ };
+
+ const App = () => {
+   const title = "counter";
+
+   const homePath = "/";
+   const currentPath = window.location.pathname;
+
+   const klass = "title";
+   const text = currentPath === homePath && capitalize(title);
+
+   const props = {
+     className: klass,
+     message: text,
+   };
+
+   return (
+     <div className="App">
+       <Title {...props} />
+       <Counter initialCount={1} />
+     </div>
+   );
+ };
+
+ export default App;
 ```
+
+</details>
+
+[&#9654; Run code &rarr;](https://codesandbox.io/s/react-counter-lesson-7-p5jph)
 
 > **Notes:**
 >
@@ -430,25 +657,79 @@ const Counter …
 
 ### 8. List
 
-```javascript
-// file: src/App.js
-// …
-const Counter …
-  // …
-  const operations = [
-    { key: "decrement", symbol: "-", handler: () => setCount(count - 1) },
-    { key: "increment", symbol: "+", handler: () => setCount(count + 1) },
-  ];
-  return (
-    <div>
-      // …
-      {operations.map(({ key, symbol, handler }) => (
-        <button key={key} onClick={handler}>
-          {symbol}
-        </button>
-      ))}
-      // …
+<details>
+  <summary>src/App.js</summary>
+
+```diff
+ import React, { useState } from "react";
+
+ const capitalize = (string) => {
+   const first = string.charAt(0).toUpperCase();
+   const rest = string.slice(1);
+
+   return `${first}${rest}`;
+ };
+
+ const Title = ({ className, message }) => (
+   <h1 className={className}>{message}</h1>
+ );
+
+ const Counter = ({ initialCount = 0 }) => {
+   const [count, setCount] = useState(initialCount);
+
+   const handleDecrement = () => setCount(count - 1);
+
+   const handleIncrement = () => setCount(count + 1);
+
+   return (
+     <div>
+       <button onClick={handleDecrement}>-</button>
+       <code>{count}</code>
+       <button onClick={handleIncrement}>+</button>
+     </div>
+   );
+ };
+
++const CountList = ({ title, numbers }) => (
++  <div>
++    <h2>{title}</h2>
++    <ul>
++      {numbers.map((n) => (
++        <li key={n}>{n}</li>
++      ))}
++    </ul>
++  </div>
++);
++
+ const App = () => {
+   const title = "counter";
+
+   const homePath = "/";
+   const currentPath = window.location.pathname;
+
+   const klass = "title";
+   const text = currentPath === homePath && capitalize(title);
+
+   const props = {
+     className: klass,
+     message: text,
+   };
+
+   return (
+     <div className="App">
+       <Title {...props} />
+       <Counter initialCount={1} />
++      <CountList title="Numbers" numbers={[1, 2, 3]} />
+     </div>
+   );
+ };
+
+ export default App;
 ```
+
+</details>
+
+[&#9654; Run code &rarr;](https://codesandbox.io/s/react-counter-lesson-8-zyw9r)
 
 > **Notes:**
 >
@@ -462,34 +743,96 @@ const Counter …
 
 ### 9. Form
 
-```javascript
-// file: src/App.js
-// …
-const Title … => {
-  const [newTitle, setNewTitle] = useState(title);
-  const [newValue, setNewValue] = useState(title);
+<details>
+<summary>src/App.js</summary>
 
-  const handleChange = ({ target: { value } }) => {
-    setNewTitle(value);
-    setNewValue(value);
-  };
+```diff
+ import React, { useState } from "react";
 
-  return (
-    <div>
-      <form>
-        <label htmlFor="new-title">New title:</label>
-        <input
-          id="new-title"
-          type="text"
-          value={newValue}
-          onChange={handleChange}
-        />
-      </form>
-      <h1 className={className}>{newTitle}</h1>
-    </div>
-  );
-// …
+ const capitalize = (string) => {
+   const first = string.charAt(0).toUpperCase();
+   const rest = string.slice(1);
+
+   return `${first}${rest}`;
+ };
+
+-const Title = ({ className, message }) => (
+-  <h1 className={className}>{message}</h1>
+-);
++const Title = ({ className, message }) => {
++  const [text, setText] = useState(message);
++
++  const handleChange = ({ target: { value } }) => setText(value);
++
++  return (
++    <div>
++      <input
++        placeholder="Enter new text"
++        type="text"
++        defaultValue={text}
++        onChange={handleChange}
++      />
++      <h1 className={className}>{text}</h1>
++    </div>
++  );
++};
+
+ const Counter = ({ initialCount = 0 }) => {
+   const [count, setCount] = useState(initialCount);
+
+   const handleDecrement = () => setCount(count - 1);
+
+   const handleIncrement = () => setCount(count + 1);
+
+   return (
+     <div>
+       <button onClick={handleDecrement}>-</button>
+       <code>{count}</code>
+       <button onClick={handleIncrement}>+</button>
+     </div>
+   );
+ };
+
+ const CountList = ({ title, numbers }) => (
+   <div>
+     <h2>{title}</h2>
+     <ul>
+       {numbers.map((n) => (
+         <li key={n}>{n}</li>
+       ))}
+     </ul>
+   </div>
+ );
+
+ const App = () => {
+   const title = "counter";
+
+   const homePath = "/";
+   const currentPath = window.location.pathname;
+
+   const klass = "title";
+   const text = currentPath === homePath && capitalize(title);
+
+   const props = {
+     className: klass,
+     message: text,
+   };
+
+   return (
+     <div className="App">
+       <Title {...props} />
+       <Counter initialCount={1} />
+       <CountList title="Numbers" numbers={[1, 2, 3]} />
+     </div>
+   );
+ };
+
+ export default App;
 ```
+
+</details>
+
+[&#9654; Run code &rarr;](https://codesandbox.io/s/react-counter-lesson-9-i6dvx)
 
 > **Notes:**
 >
